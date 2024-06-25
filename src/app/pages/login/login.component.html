@@ -1,0 +1,37 @@
+<!-- <p-toast></p-toast> -->
+<form class="flex flex-column align-items-center justify-content-center min-h-screen" (submit)="login()">
+    <div class="text-center card flex justify-content-center">
+        <p-card header="Login" subheader="Faça login para acessar a aplicação" [style]="{ width: '360px' }">
+            <ng-template pTemplate="header">
+            </ng-template>
+            <div class="text-left">
+                <div class="flex flex-column gap-2">
+                    <label for="email">email</label>
+                    <input 
+                    pInputText 
+                    id="email" 
+                    aria-describedby="email-help" 
+                    [(ngModel)]="username"
+                    name="email"
+                    />
+                </div>
+                <div class="flex flex-column gap-2">
+                    <label for="password">Password</label>
+                    <input 
+                    pInputText 
+                    id="password" 
+                    aria-describedby="password-help" 
+                    [(ngModel)]="password"
+                    name="password"
+                    type="password"
+                    />
+                </div>
+            </div>
+            <ng-template pTemplate="footer">
+                <div class="flex gap-3 mt-1">
+                    <p-button label="Entrar" type="submit" class="w-full" styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</form>
