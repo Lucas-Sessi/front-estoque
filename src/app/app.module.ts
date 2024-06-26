@@ -15,11 +15,11 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { LayoutDefaultComponent } from './pages/layout-default/layout-default.component';
-import { EstoqueListComponent } from './pages/estoque/estoque-list/estoque-list.component';
 import { TableModule } from 'primeng/table';
 import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-list.component';
 import { MenuModule } from 'primeng/menu';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pagos-list/produtos-pagos-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     HeaderComponent,
     LoginComponent,
     LayoutDefaultComponent,
-    EstoqueListComponent,
+    ProdutosPagosListComponent,
     ProdutosListComponent
   ],
   imports: [

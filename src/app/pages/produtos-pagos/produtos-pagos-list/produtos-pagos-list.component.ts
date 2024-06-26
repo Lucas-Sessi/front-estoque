@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EstoqueService } from '../../../services/estoque';
+import { ProdutosPagosService } from '../../../services/produtos-pagos';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-estoque-list',
-  templateUrl: './estoque-list.component.html',
-  styleUrl: './estoque-list.component.css',
+  selector: 'app-produtos-pagos-list',
+  templateUrl: './produtos-pagos-list.component.html',
+  styleUrl: './produtos-pagos-list.component.css',
   providers: [MessageService],
 })
-export class EstoqueListComponent implements OnInit {
+export class ProdutosPagosListComponent implements OnInit {
   produtos$: Observable<any>;
   produtos: any[] = [];
   isLoading: boolean = true;
 
   constructor(
-    private readonly estoqueService: EstoqueService,
+    private readonly produtosPagosService: ProdutosPagosService,
     private router: Router,
     private messageService: MessageService,
   ) {
@@ -28,7 +28,7 @@ export class EstoqueListComponent implements OnInit {
   }
 
   getEstoque() {
-    this.produtos$ = this.estoqueService.getEstoque();
+    this.produtos$ = this.produtosPagosService.getProdutosPagos();
     this.produtos$.subscribe({
       next: (data) => {
         this.produtos = data;

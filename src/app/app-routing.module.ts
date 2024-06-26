@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutDefaultComponent } from './pages/layout-default/layout-default.component';
 import { loginGuard } from './guards/login.guard';
-import { EstoqueListComponent } from './pages/estoque/estoque-list/estoque-list.component';
 import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-list.component';
+import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pagos-list/produtos-pagos-list.component';
 
 const routes: Routes = [
   {
@@ -17,8 +17,8 @@ const routes: Routes = [
     canActivate: [loginGuard],
     children: [
       {
-        path: 'estoque',
-        component: EstoqueListComponent,
+        path: 'produtos-pagos',
+        component: ProdutosPagosListComponent,
       },
       {
         path: 'produtos',
