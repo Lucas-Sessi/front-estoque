@@ -21,6 +21,9 @@ import { MenuModule } from 'primeng/menu';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pagos-list/produtos-pagos-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProdutosCreateComponent } from './pages/produtos/produtos-create/produtos-create.component';
+import { DialogModule } from 'primeng/dialog';
+import { ProdutosUpdateComponent } from './pages/produtos/produtos-update/produtos-update.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { HomeComponent } from './pages/home/home.component';
     LayoutDefaultComponent,
     ProdutosPagosListComponent,
     ProdutosListComponent,
-    HomeComponent
+    HomeComponent,
+    ProdutosCreateComponent,
+    ProdutosUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { HomeComponent } from './pages/home/home.component';
     TableModule,
     MenuModule,
     ConfirmDialogModule,
+    DialogModule,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

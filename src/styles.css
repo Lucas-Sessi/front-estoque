@@ -1,15 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importe outros estilos globais, se necessário */
+
+/* Importe estilos do PrimeNG */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
-
-/* Order */
-@layer reset, primeng;
-
 /* Reset CSS */
-@layer reset {
-    button,
-    input {
-        /* CSS to Reset */
-    }
+button,
+input {
+    /* CSS para resetar botões e inputs, se necessário */
+    font-weight: normal;
+    /* Outros estilos de reset, se aplicável */
+}
+
+.p-button .p-button-label {
+    font-weight: normal !important;
+    font-size: 14px;
 }

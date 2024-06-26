@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Observable } from 'rxjs';
 import { ProdutosService } from '../../../services/produtos';
+import { ProdutosCreateComponent } from '../produtos-create/produtos-create.component';
 
 @Component({
   selector: 'app-produtos-list',
@@ -58,7 +59,6 @@ export class ProdutosListComponent implements OnInit {
   }
 
   editarProduto(cd_produto: number) {
-    console.log('esse é o id do editar: ', cd_produto)
     this.router.navigate([`/produtos/editar/${cd_produto}`]);
   }
 

@@ -1,0 +1,44 @@
+<p-toast></p-toast>
+<div class="flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
+    <form class="card flex flex-column align-items-center justify-content-center p-4 w-8 sm:w-8 md:w-6 lg:w-4 overflow-auto gap-3" (submit)="cadastrarProduto()">
+        <div class="flex flex-column gap-1 w-full">
+            <label for="descricao">descricao</label>
+            <input 
+                pInputText
+                id="descricao" 
+                aria-describedby="descricao-help" 
+                [(ngModel)]="produto.descricao"
+                name="produto.descricao"
+                class="w-full"
+                />
+        </div>
+        <div class="flex flex-column gap-2 w-full">
+            <label for="dt_validade">data validade</label>
+            <input 
+                pInputText
+                id="dt_validade" 
+                aria-describedby="dt_validade-help" 
+                [(ngModel)]="produto.dt_validade"
+                name="produto.dt_validade"
+                type="date"
+                class="w-full"
+                />
+        </div>
+        <div class="flex flex-column gap-2 w-full">
+            <label for="qtd_estoque">quantidade em estoque</label>
+            <input 
+                pInputText
+                id="qtd_estoque" 
+                aria-describedby="qtd_estoque-help" 
+                [(ngModel)]="produto.qtd_estoque"
+                name="produto.qtd_estoque"
+                type="number"
+                class="w-full"
+                />
+        </div>
+        <div class="card flex align-items-center justify-content-center gap-2 mt-4 w-full">
+            <p-button label="Salvar" icon="pi pi-save" type="submit" severity="success" />
+            <p-button label="Cancelar" icon="pi pi-times" severity="danger" (click)="cancelar()" />
+        </div>
+    </form>
+</div>

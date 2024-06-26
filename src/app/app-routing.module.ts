@@ -6,6 +6,8 @@ import { loginGuard } from './guards/login.guard';
 import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-list.component';
 import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pagos-list/produtos-pagos-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProdutosCreateComponent } from './pages/produtos/produtos-create/produtos-create.component';
+import { ProdutosUpdateComponent } from './pages/produtos/produtos-update/produtos-update.component';
 
 const routes: Routes = [
   {
@@ -27,7 +29,25 @@ const routes: Routes = [
       },
       {
         path: 'produtos',
-        component: ProdutosListComponent,
+        children: [
+          {
+            path: '',
+            redirectTo: 'list',
+            pathMatch: 'full'
+          },
+          {
+            path: 'list',
+            component: ProdutosListComponent,
+          },
+          {
+            path: 'adicionar',
+            component: ProdutosCreateComponent,
+          },
+          {
+            path: 'editar/:cd_produto',
+            component: ProdutosUpdateComponent,
+          }
+        ]
       }
     ],
   },
