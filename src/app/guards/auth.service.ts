@@ -21,7 +21,7 @@ export class AuthService {
     if (data.access_token) {
       sessionStorage.setItem('token', data.access_token);
 
-      this.router.navigate(['/estoque']);
+      this.router.navigate(['/home']);
       
       this.loggedIn.next(true);
     } else {

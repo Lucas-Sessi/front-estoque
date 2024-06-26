@@ -5,6 +5,7 @@ import { LayoutDefaultComponent } from './pages/layout-default/layout-default.co
 import { loginGuard } from './guards/login.guard';
 import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-list.component';
 import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pagos-list/produtos-pagos-list.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
     component: LayoutDefaultComponent,
     canActivate: [loginGuard],
     children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
       {
         path: 'produtos-pagos',
         component: ProdutosPagosListComponent,

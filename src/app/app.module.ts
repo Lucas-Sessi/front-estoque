@@ -20,6 +20,7 @@ import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-l
 import { MenuModule } from 'primeng/menu';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pagos-list/produtos-pagos-list.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProdutosPagosListComponent } from './pages/produtos-pagos/produtos-pago
     LoginComponent,
     LayoutDefaultComponent,
     ProdutosPagosListComponent,
-    ProdutosListComponent
+    ProdutosListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
