@@ -17,6 +17,9 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { LayoutDefaultComponent } from './pages/layout-default/layout-default.component';
 import { EstoqueListComponent } from './pages/estoque/estoque-list/estoque-list.component';
 import { TableModule } from 'primeng/table';
+import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-list.component';
+import { MenuModule } from 'primeng/menu';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { TableModule } from 'primeng/table';
     HeaderComponent,
     LoginComponent,
     LayoutDefaultComponent,
-    EstoqueListComponent
+    EstoqueListComponent,
+    ProdutosListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,8 @@ import { TableModule } from 'primeng/table';
     AppRoutingModule,
     TabMenuModule,
     TableModule,
+    MenuModule,
+    ConfirmDialogModule,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

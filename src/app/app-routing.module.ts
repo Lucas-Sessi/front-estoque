@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutDefaultComponent } from './pages/layout-default/layout-default.component';
 import { loginGuard } from './guards/login.guard';
 import { EstoqueListComponent } from './pages/estoque/estoque-list/estoque-list.component';
+import { ProdutosListComponent } from './pages/produtos/produtos-list/produtos-list.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'estoque',
         component: EstoqueListComponent,
+      },
+      {
+        path: 'produtos',
+        component: ProdutosListComponent,
       }
     ],
   },
