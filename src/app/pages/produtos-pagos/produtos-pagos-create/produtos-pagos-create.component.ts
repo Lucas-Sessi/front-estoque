@@ -72,11 +72,19 @@ export class ProdutosPagosCreateComponent implements OnInit {
         this.router.navigate(['/produtos-pagos']);
       },
       error: (error) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Erro',
-          detail: error.error.error[0] || 'Erro ao cadastrar produto pago!'
-        });
+        if(error.status === 400) {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error.error.error[0] || 'Erro ao cadastrar produto pago'
+          });
+        } else if (error.status === 409) {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error.error.error || 'Erro ao cadastrar produto pago'
+          });
+        }
       }
     })
   }
