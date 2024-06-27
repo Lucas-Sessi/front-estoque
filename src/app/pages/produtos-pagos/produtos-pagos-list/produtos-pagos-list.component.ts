@@ -53,10 +53,6 @@ export class ProdutosPagosListComponent implements OnInit {
     this.router.navigate(['/produtos-pagos/adicionar']);
   }
 
-  editarProdutoPagos(id: number) {
-    this.router.navigate([`/produtos-pagos/editar/${id}`]);
-  }
-
   deletarProdutoPagos(id: number, event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,

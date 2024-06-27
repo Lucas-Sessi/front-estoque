@@ -9,7 +9,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProdutosCreateComponent } from './pages/produtos/produtos-create/produtos-create.component';
 import { ProdutosUpdateComponent } from './pages/produtos/produtos-update/produtos-update.component';
 import { ProdutosPagosCreateComponent } from './pages/produtos-pagos/produtos-pagos-create/produtos-pagos-create.component';
-import { ProdutosPagosUpdateComponent } from './pages/produtos-pagos/produtos-pagos-update/produtos-pagos-update.component';
 import { UsuariosListComponent } from './pages/usuarios/usuarios-list/usuarios-list.component';
 import { UsuariosCreateComponent } from './pages/usuarios/usuarios-create/usuarios-create.component';
 import { UsuariosUpdateComponent } from './pages/usuarios/usuarios-update/usuarios-update.component';
@@ -46,10 +45,6 @@ const routes: Routes = [
           {
             path: 'adicionar',
             component: ProdutosPagosCreateComponent,
-          },
-          {
-            path: 'editar/:id',
-            component: ProdutosPagosUpdateComponent,
           }
         ],
       },

@@ -25,7 +25,6 @@ import { ProdutosCreateComponent } from './pages/produtos/produtos-create/produt
 import { DialogModule } from 'primeng/dialog';
 import { ProdutosUpdateComponent } from './pages/produtos/produtos-update/produtos-update.component';
 import { ProdutosPagosCreateComponent } from './pages/produtos-pagos/produtos-pagos-create/produtos-pagos-create.component';
-import { ProdutosPagosUpdateComponent } from './pages/produtos-pagos/produtos-pagos-update/produtos-pagos-update.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { UsuariosListComponent } from './pages/usuarios/usuarios-list/usuarios-list.component';
 import { UsuariosCreateComponent } from './pages/usuarios/usuarios-create/usuarios-create.component';
@@ -43,7 +42,6 @@ import { UsuariosUpdateComponent } from './pages/usuarios/usuarios-update/usuari
     ProdutosCreateComponent,
     ProdutosUpdateComponent,
     ProdutosPagosCreateComponent,
-    ProdutosPagosUpdateComponent,
     UsuariosListComponent,
     UsuariosCreateComponent,
     UsuariosUpdateComponent
