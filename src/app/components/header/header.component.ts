@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -11,6 +12,10 @@ export class HeaderComponent implements OnInit {
 
   activeItem: MenuItem | undefined;
 
+  constructor(
+    private readonly router: Router,
+  ) {}
+
   ngOnInit() {
       this.items = [
         { label: 'Home', icon: 'pi pi-home', routerLink: ['/home'] },
@@ -20,5 +25,10 @@ export class HeaderComponent implements OnInit {
       ];
 
       this.activeItem = this.items[0];
+  }
+
+  logout() {
+    sessionStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 }

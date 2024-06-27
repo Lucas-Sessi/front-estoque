@@ -33,23 +33,19 @@ export class ProdutosListComponent implements OnInit {
     this.produtos$ = this.produtosService.getProdutos();
     this.produtos$.subscribe({
       next: (data) => {
-        console.log('data', data.data)
         this.produtos = data.data;
         
         this.isLoading = false;
 
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Success',
-          detail: 'Produtos carregados com sucesso',
-        });
       },
       error: (error) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'Erro ao carregar produtos',
-        });
+        if(error.status === 400 || error.status === 500) {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error.error.error || 'Erro ao carregar produtos',
+          });
+        }
       }
     })
   }

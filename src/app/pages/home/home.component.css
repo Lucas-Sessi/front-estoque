@@ -1,0 +1,49 @@
+/* Estilos globais ou de componente */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-container {
+    height: calc(100vh - 80px);
+    background-color: #f4f4f9;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+  
+  .content {
+    max-width: 700px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+    animation: slideIn 1.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

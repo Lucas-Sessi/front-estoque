@@ -1,20 +1,40 @@
-<div class="card">
-    <p-table [value]="produtos" [tableStyle]="{ 'min-width': '40rem' }">
+<p-toast></p-toast>
+<div class="card container">
+    <p-table [value]="produtosPagos" [tableStyle]="{ 'min-width': '40rem', 'font-size': '14px' }">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h4>
+                    Produtos Pagos
+                </h4>
+            <p-button label="adicionar" (click)="adicionarProdutoPagos()" icon="pi pi-plus" [style]="{'padding': '7px', 'heigth': '20px', 'fontSize': '12px', 'fontWeight': 'normal'}" />
+            </div>
+        </ng-template>
         <ng-template pTemplate="header">
             <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Quantity</th>
+                <th>Nome do produto</th>
+                <th>Nome do usuário</th>
+                <th>Quantidade paga</th>
+                <th>Data de entrega</th>
+                <th>Ações</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-product>
+        <ng-template pTemplate="body" let-paidsProduct>
             <tr>
-                <td>{{ product.code }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.quantity }}</td>
+                <td>{{ paidsProduct.nm_produto }}</td>
+                <td>{{ paidsProduct.nm_usuario }}</td>
+                <td>{{ paidsProduct.qtd_paga }}</td>
+                <td>{{ paidsProduct.dt_entrega | date: 'dd/MM/yyyy' }}</td>
+                <td>
+                    <p-toast />
+                    <p-confirmDialog />
+                    <p-button (click)="editarProdutoPagos(paidsProduct.id)" icon="pi pi-pencil" severity="secondary" [style]="{'padding': '5px', 'fontSize': '10px', 'fontWeight': 'normal', 'marginRight': '4px'}"/>
+                    
+                    <p-button (click)="deletarProdutoPagos(paidsProduct.id, $event)" icon="pi pi-trash" severity="danger" [style]="{'padding': '5px', 'heigth': '20px', 'fontSize': '7px', 'fontWeight': 'normal'}"/>
+                </td>
             </tr>
         </ng-template>
     </p-table>
 </div>
+
+
+<router-outlet></router-outlet>

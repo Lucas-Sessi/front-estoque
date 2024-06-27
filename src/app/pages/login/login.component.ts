@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../guards/auth.service';
 import { MessageService } from 'primeng/api';
 import { LoginService } from '../../services/login';
+import sha1 from 'sha1';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,9 @@ export class LoginComponent {
   ) {}
 
   login() {
-    this.loginService.login(this.username, this.password).subscribe({
+    const senhaHash = sha1(this.password);
+    
+    this.loginService.login(this.username, senhaHash).subscribe({
       next: (user) => {
           this.authService.login(user.data);
 

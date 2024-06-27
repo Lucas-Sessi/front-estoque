@@ -1,0 +1,55 @@
+<p-toast></p-toast>
+<div class="flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
+    <form class="card flex flex-column align-items-center justify-content-center p-4 w-8 sm:w-8 md:w-6 lg:w-4 overflow-auto gap-3" (submit)="editarUsuario()">
+        <div class="flex flex-column gap-1 w-full">
+            <label for="nm_completo">Nome completo</label>
+            <input 
+                pInputText
+                id="nm_completo" 
+                aria-describedby="nm_completo-help" 
+                [(ngModel)]="usuario.nm_completo"
+                name="usuario.nm_completo"
+                class="w-full"
+                />
+        </div>
+        <div class="flex flex-column gap-2 w-full">
+            <label for="nm_usuario">Nome de Usuário</label>
+            <input 
+                pInputText
+                id="nm_usuario" 
+                aria-describedby="nm_usuario-help" 
+                [(ngModel)]="usuario.nm_usuario"
+                name="usuario.nm_usuario"
+                class="w-full"
+                />
+        </div>
+        <div class="flex flex-column gap-2 w-full">
+            <label for="senha">Senha</label>
+            <input 
+                pInputText
+                id="senha" 
+                aria-describedby="senha-help" 
+                [(ngModel)]="usuario.nova_senha"
+                name="usuario.nova_senha"
+                type="password"
+                class="w-full"
+                />
+        </div>
+        <div class="flex flex-column gap-2 w-full">
+            <label for="confirmacao_senha">Cofirme a sua senha</label>
+            <input 
+                pInputText
+                id="confirmacao_senha" 
+                aria-describedby="senha-help" 
+                [(ngModel)]="usuario.confirmacao_senha"
+                name="usuario.confirmacao_senha"
+                type="password"
+                class="w-full"
+                />
+        </div>
+        <div class="card flex align-items-center justify-content-center gap-2 mt-4 w-full">
+            <p-button label="Salvar" icon="pi pi-save" type="submit" severity="success" />
+            <p-button label="Cancelar" icon="pi pi-times" severity="danger" (click)="cancelar()" />
+        </div>
+    </form>
+</div>
