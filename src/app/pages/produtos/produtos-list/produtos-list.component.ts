@@ -4,6 +4,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { Observable } from 'rxjs';
 import { ProdutosService } from '../../../services/produtos';
 import { ProdutosCreateComponent } from '../produtos-create/produtos-create.component';
+import { ProdutosOutput } from '../types/produtos';
 
 @Component({
   selector: 'app-produtos-list',
@@ -13,7 +14,7 @@ import { ProdutosCreateComponent } from '../produtos-create/produtos-create.comp
 })
 export class ProdutosListComponent implements OnInit {
   produtos$: Observable<any>;
-  produtos: any[] = [];
+  produtos: ProdutosOutput[] = [];
   isLoading: boolean = true;
 
   constructor(

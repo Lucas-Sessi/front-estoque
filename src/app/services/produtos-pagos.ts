@@ -38,7 +38,7 @@ export class ProdutosPagosService {
     }
 
     updateProdutoPago(id: number, data: any): Observable<any> {
-        return this.http.put(`${this.url}/paid-products/${id}`, data, {
+        return this.http.patch(`${this.url}/paid-products/${id}`, data, {
             headers: {
                 Authorization: `Bearer ${sessionStorage.getItem('token')}`
             }

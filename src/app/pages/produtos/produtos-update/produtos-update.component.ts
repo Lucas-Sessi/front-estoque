@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../../../services/produtos';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { ProdutoInput } from '../types/produtos';
 
 @Component({
   selector: 'app-produtos-update',
@@ -10,9 +11,9 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class ProdutosUpdateComponent implements OnInit {
-  produto: any = {
+  produto: ProdutoInput = {
     descricao: '',
-    dt_validade: '',
+    dt_validade: null,
     qtd_estoque: null,
   }
 
@@ -49,23 +50,28 @@ export class ProdutosUpdateComponent implements OnInit {
   }
 
   atualizarProduto() {
-    this.produtosService.updateProduto(this.cd_produto, this.produto).subscribe({
-      next: () => {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Sucesso',
-          detail: 'Produto atualizado com sucesso!',
-        })
-        this.router.navigate(['/produtos'])
-      },
-      error: () => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Erro',
-          detail: 'Erro ao atualizar produto!',
-        })
-      }
-    })
+    if (!this.produto.descricao || !this.produto.dt_validade || !this.produto.qtd_estoque) {
+      this.messageService.add({severity:'error', summary:'Erro', detail:'Preencha todos os campos!'});
+      return
+    } else {
+      this.produtosService.updateProduto(this.cd_produto, this.produto).subscribe({
+        next: () => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Sucesso',
+            detail: 'Produto atualizado com sucesso!',
+          })
+          this.router.navigate(['/produtos'])
+        },
+        error: () => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Erro',
+            detail: 'Erro ao atualizar produto!',
+          })
+        }
+      })
+    }
   }
 
   cancelar() {

@@ -48,7 +48,7 @@ const routes: Routes = [
             component: ProdutosPagosCreateComponent,
           },
           {
-            path: 'editar/:cd_produto',
+            path: 'editar/:id',
             component: ProdutosPagosUpdateComponent,
           }
         ],

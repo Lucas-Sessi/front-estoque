@@ -3,13 +3,14 @@
     <form class="card flex flex-column align-items-center justify-content-center p-4 w-8 sm:w-8 md:w-6 lg:w-4 overflow-auto gap-3" (submit)="cadastrarProduto()">
         <div class="flex flex-column gap-1 w-full">
             <label for="descricao">descricao</label>
-            <input 
+            <input
                 pInputText
                 id="descricao" 
                 aria-describedby="descricao-help" 
                 [(ngModel)]="produto.descricao"
                 name="produto.descricao"
                 class="w-full"
+                required
                 />
         </div>
         <div class="flex flex-column gap-2 w-full">

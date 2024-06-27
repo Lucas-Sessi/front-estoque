@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ProdutosPagosService } from '../../../services/produtos-pagos';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ProdutosPagosOutput } from '../types/produtos-pagos';
 
 @Component({
   selector: 'app-produtos-pagos-list',
@@ -12,7 +13,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 })
 export class ProdutosPagosListComponent implements OnInit {
   produtosPagos$: Observable<any>;
-  produtosPagos: any[] = [];
+  produtosPagos: ProdutosPagosOutput[] = [];
   isLoading: boolean = true;
 
   constructor(

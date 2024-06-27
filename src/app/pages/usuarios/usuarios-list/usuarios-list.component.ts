@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { UsuariosService } from '../../../services/usuarios';
 import { Observable } from 'rxjs';
+import { UsuariosOutput } from '../types/usuarios';
 
 @Component({
   selector: 'app-usuarios-list',
@@ -12,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosListComponent implements OnInit {
   usuarios$: any;
-  usuarios: any[] = [];
+  usuarios: UsuariosOutput[] = [];
   isLoading: boolean = true;
 
   constructor(

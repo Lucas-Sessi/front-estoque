@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UsuariosService } from '../../../services/usuarios';
 import { MessageService } from 'primeng/api';
 import sha1 from 'sha1';
+import { UsuarioInput } from '../types/usuarios';
 
 
 @Component({
@@ -12,7 +13,7 @@ import sha1 from 'sha1';
   providers: [MessageService],
 })
 export class UsuariosCreateComponent {
-  usuario: any = {
+  usuario: UsuarioInput = {
     nm_completo: '',
     nm_usuario: '',
     senha: '',
@@ -37,6 +38,25 @@ export class UsuariosCreateComponent {
       return;
     }
 
+    const senhaComEspacos = /\s/;
+
+    if (senhaComEspacos.test(this.usuario.senha)) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Erro',
+        detail: 'Sua senha não pode conter espaços!',
+      });
+      return;
+    }
+
+    if (!this.usuario.nm_completo || !this.usuario.nm_usuario || !this.usuario.senha || !this.usuario.confirmacao_senha) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Preencha todos os campos',
+      });
+      return;
+    } else {
     const novoUsuario = {
       nm_completo: this.usuario.nm_completo,
       nm_usuario: this.usuario.nm_usuario,
@@ -62,6 +82,7 @@ export class UsuariosCreateComponent {
       }
     })
   }
+}
 
   cancelar() {
     this.router.navigate(['/usuarios']);

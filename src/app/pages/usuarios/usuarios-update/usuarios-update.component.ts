@@ -3,6 +3,7 @@ import { UsuariosService } from '../../../services/usuarios';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import sha1 from 'sha1';
+import { UsuarioInput } from '../types/usuarios';
 
 @Component({
   selector: 'app-usuarios-update',
@@ -11,10 +12,10 @@ import sha1 from 'sha1';
   providers: [MessageService],
 })
 export class UsuariosUpdateComponent implements OnInit {
-  usuario: any = {
+  usuario: UsuarioInput = {
     nm_completo: '',
     nm_usuario: '',
-    nova_senha: '',
+    senha: '',
     confirmacao_senha: '',
   }
 
@@ -51,7 +52,7 @@ export class UsuariosUpdateComponent implements OnInit {
   }
 
   editarUsuario() {
-    if (this.usuario.nova_senha !== this.usuario.confirmacao_senha) {
+    if (this.usuario.senha !== this.usuario.confirmacao_senha) {
       this.messageService.add({
         severity: 'error',
         summary: 'Error',
@@ -61,29 +62,50 @@ export class UsuariosUpdateComponent implements OnInit {
       return;
     }
 
-    const novoUsuarioEditado = {
-      nm_completo: this.usuario.nm_completo,
-      nm_usuario: this.usuario.nm_usuario,
-      senha: sha1(this.usuario.nova_senha),
+    const senhaComEspacos = /\s/;
+
+    if (senhaComEspacos.test(this.usuario.senha)) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Erro',
+        detail: 'Sua senha não pode conter espaços!',
+      });
+      return;
     }
 
-    this.usuariosService.updateUsuario(this.idUsuario, novoUsuarioEditado).subscribe({
-      next: () => {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Sucesso',
-          detail: 'Usuário atualizado com sucesso!',
-        })
-        this.router.navigate(['/usuarios'])
-      },
-      error: () => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Erro',
-          detail: 'Erro ao atualizar usuário',
-        })
+    if (!this.usuario.nm_completo || !this.usuario.nm_usuario || !this.usuario.senha || !this.usuario.confirmacao_senha) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Preencha todos os campos',
+      });
+
+      return;
+    } else {
+      const novoUsuarioEditado = {
+        nm_completo: this.usuario.nm_completo,
+        nm_usuario: this.usuario.nm_usuario,
+        senha: sha1(this.usuario.senha.trim()),
       }
-    })
+  
+      this.usuariosService.updateUsuario(this.idUsuario, novoUsuarioEditado).subscribe({
+        next: () => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Sucesso',
+            detail: 'Usuário atualizado com sucesso!',
+          })
+          this.router.navigate(['/usuarios'])
+        },
+        error: () => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Erro',
+            detail: 'Erro ao atualizar usuário',
+          })
+        }
+      })
+    }
   }
 
   cancelar() {
