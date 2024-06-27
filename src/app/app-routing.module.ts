@@ -13,6 +13,7 @@ import { ProdutosPagosUpdateComponent } from './pages/produtos-pagos/produtos-pa
 import { UsuariosListComponent } from './pages/usuarios/usuarios-list/usuarios-list.component';
 import { UsuariosCreateComponent } from './pages/usuarios/usuarios-create/usuarios-create.component';
 import { UsuariosUpdateComponent } from './pages/usuarios/usuarios-update/usuarios-update.component';
+import { verifyTokenGuard } from './guards/verify-token.guard';
 
 const routes: Routes = [
   {
@@ -27,9 +28,11 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+        canActivate: [verifyTokenGuard],
       },
       {
         path: 'produtos-pagos',
+        canActivate: [verifyTokenGuard],
         children: [
           {
             path: '',
@@ -52,6 +55,7 @@ const routes: Routes = [
       },
       {
         path: 'produtos',
+        canActivate: [verifyTokenGuard],
         children: [
           {
             path: '',
@@ -74,6 +78,7 @@ const routes: Routes = [
       },
       {
         path: 'usuarios',
+        canActivate: [verifyTokenGuard],
         children: [
           {
             path: '',
