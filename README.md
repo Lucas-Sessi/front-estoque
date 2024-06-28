@@ -6,7 +6,6 @@
 <ul>
 <li>Angular: Framework para construção de aplicações web.</li>
 <li>PrimeNG: Biblioteca de componentes para Angular, utilizada para a criação de interfaces ricas.</li>
-<li>Recursos Implementados:</li>
 </ul>
 
 <h3>Recursos Implementados:</h3>
