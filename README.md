@@ -18,6 +18,9 @@
 
 <h3>packages install</h3>
 
-<p>npm install primeng --save</p>
-<p>npm install primeicons --save</p>
-<p>npm install primeflex --save</p>
+<p>npm install</p>
+<ul>
+  <li>primeng --save</li>
+  <li>primeicons --save</li>
+  <li>primeflex --save</li>
+</ul>
