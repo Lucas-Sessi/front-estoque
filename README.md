@@ -1,21 +1,24 @@
 <h1>Projeto de Gerenciamento de Estoque</h1>
 
-O frontend do projeto foi desenvolvido utilizando Angular, uma plataforma poderosa para construir aplicações web dinâmicas. A biblioteca de componentes PrimeNG foi utilizada para criar uma interface de usuário rica e interativa, proporcionando uma experiência de usuário moderna e responsiva.
+<p>O frontend do projeto foi desenvolvido utilizando Angular, uma plataforma poderosa para construir aplicações web dinâmicas. A biblioteca de componentes PrimeNG foi utilizada para criar uma interface de usuário rica e interativa, proporcionando uma experiência de usuário moderna e responsiva.</p>
 
-Principais Tecnologias Utilizadas:
+<h3>Principais Tecnologias Utilizadas:</h3>
+<ul>
+<li>Angular: Framework para construção de aplicações web.</li>
+<li>PrimeNG: Biblioteca de componentes para Angular, utilizada para a criação de interfaces ricas.</li>
+<li>Recursos Implementados:</li>
+</ul>
 
-Angular: Framework para construção de aplicações web.
-PrimeNG: Biblioteca de componentes para Angular, utilizada para a criação de interfaces ricas.
-Recursos Implementados:
+<h3>Recursos Implementados:</h3>h3>
+<ul>
+<li>Interface intuitiva para gerenciar estoque.</li>
+<li>Componentes de alta qualidade e personalizados para atender às necessidades específicas do projeto.</li>
+<li>Integração com o backend para obter e enviar dados em tempo real.</li>
+<li>Repositório do Frontend: Link para o repositório do frontend</li>
+</ul>
 
-Interface intuitiva para gerenciar estoque.
-Componentes de alta qualidade e personalizados para atender às necessidades específicas do projeto.
-Integração com o backend para obter e enviar dados em tempo real.
-Repositório do Frontend: Link para o repositório do frontend
+<h3>packages install</h3>
 
-
-# packages install
-
-npm install primeng --save
-npm install primeicons --save
-npm install primeflex --save
+<p>npm install primeng --save</p>
+<p>npm install primeicons --save</p>
+<p>npm install primeflex --save</p>
