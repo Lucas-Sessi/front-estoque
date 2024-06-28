@@ -29,6 +29,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { UsuariosListComponent } from './pages/usuarios/usuarios-list/usuarios-list.component';
 import { UsuariosCreateComponent } from './pages/usuarios/usuarios-create/usuarios-create.component';
 import { UsuariosUpdateComponent } from './pages/usuarios/usuarios-update/usuarios-update.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { UsuariosUpdateComponent } from './pages/usuarios/usuarios-update/usuari
     ConfirmDialogModule,
     DialogModule,
     AutoCompleteModule,
+    ProgressSpinnerModule,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

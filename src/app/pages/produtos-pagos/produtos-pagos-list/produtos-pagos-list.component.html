@@ -1,4 +1,7 @@
 <p-toast></p-toast>
+<div div *ngIf="isLoading" class="loading-container">
+    <p-progressSpinner></p-progressSpinner>
+</div>
 <div class="card container">
     <p-table [value]="produtosPagos" [tableStyle]="{ 'min-width': '40rem', 'font-size': '14px' }" styleClass="p-datatable-striped">
         <ng-template pTemplate="caption">
