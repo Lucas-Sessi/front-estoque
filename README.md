@@ -1,4 +1,4 @@
-Projeto de Gerenciamento de Estoque
+<h1>Projeto de Gerenciamento de Estoque</h1>
 
 O frontend do projeto foi desenvolvido utilizando Angular, uma plataforma poderosa para construir aplicações web dinâmicas. A biblioteca de componentes PrimeNG foi utilizada para criar uma interface de usuário rica e interativa, proporcionando uma experiência de usuário moderna e responsiva.
 
@@ -12,3 +12,10 @@ Interface intuitiva para gerenciar estoque.
 Componentes de alta qualidade e personalizados para atender às necessidades específicas do projeto.
 Integração com o backend para obter e enviar dados em tempo real.
 Repositório do Frontend: Link para o repositório do frontend
+
+
+# packages install
+
+npm install primeng --save
+npm install primeicons --save
+npm install primeflex --save
