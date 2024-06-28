@@ -9,7 +9,7 @@
 <li>Recursos Implementados:</li>
 </ul>
 
-<h3>Recursos Implementados:</h3>h3>
+<h3>Recursos Implementados:</h3>
 <ul>
 <li>Interface intuitiva para gerenciar estoque.</li>
 <li>Componentes de alta qualidade e personalizados para atender às necessidades específicas do projeto.</li>
