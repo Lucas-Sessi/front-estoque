@@ -1,6 +1,9 @@
 <p-toast></p-toast>
 <div class="flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
-    <form class="card flex flex-column align-items-center justify-content-center p-4 w-8 sm:w-8 md:w-6 lg:w-4 overflow-auto gap-3" (submit)="cadastrarUsuario()">
+    <form class="card flex flex-column align-items-center justify-content-center p-4 w-8 sm:w-8 md:w-6 lg:w-4 overflow-auto gap-2" (submit)="cadastrarUsuario()">
+        <div>
+            <h2 class="text-3xl font-semibold opacity-80">Cadastre um usuário</h2>
+        </div>
         <div class="flex flex-column gap-1 w-full">
             <label for="nm_completo">Nome completo</label>
             <input 
