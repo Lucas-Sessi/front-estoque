@@ -24,3 +24,15 @@
   <li>primeicons --save</li>
   <li>primeflex --save</li>
 </ul>
+
+
+
+![tela de login](public/tela-login.png)
+![tela de home](public/tela-home.png)
+![tela para listar produtos](public/tela-list-produtos.png)
+![tela de cadastro de produto](public/tela-cadastro-produto.png)
+![tela de edição de produto](public/tela-edit-produto.png)
+![tela para listar produtos pagos](public/tela-list-produtos-pagos.png)
+![tela para listar usuários](public/tela-list-usuarios.png)
+![tela para cadastrar usuário](public/tela-edit-usuario.png)
+![tela para deletar um produto](public/tela-delete.png)
