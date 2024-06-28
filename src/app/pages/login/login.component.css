@@ -1,3 +1,7 @@
 .container {
-    height: calc(100vh - 45px);
+    height: calc(100vh - 16px);
+    background-image: url('../../../../public/background-login.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
